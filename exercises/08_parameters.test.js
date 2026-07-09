@@ -9,7 +9,9 @@ test('08_parameters-1: can be triggered when the incoming argument is undefined'
 })
 
 test('08_parameters-2: aren\'t included in arguments', () => {
-  const getName = (name = 'Mercury') => arguments.length
+  const getName = function (name = 'Mercury') {
+    return arguments.length
+  }
 
   // Comprova que els paràmetres per defecte no formen part de l'objecte `arguments`
   expect(getName('Aaron')).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/)
