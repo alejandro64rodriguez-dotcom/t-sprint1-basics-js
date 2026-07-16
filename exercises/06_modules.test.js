@@ -1,6 +1,10 @@
 import * as Mathy from '../common/Mathy'
 import * as IndexImport from '../common'
 // WRITE YOUR IMPORT STATEMENTS HERE
+import _ from 'lodash'
+import { add } from '../common/Mathy'
+import lodash from 'lodash'
+import { sqrt as mySqrt, square as mySquare } from '../common/Mathy'
 
 test('can import Mathy', () => {
   // this one's already done! You're welcome :)
@@ -40,11 +44,11 @@ test('06_modules-5: can import from my node_modules', () => {
 })
 
 //////// EXTRA CREDIT ////////
-test.skip('Index import', () => {
+test('Index import', () => {
   //I have noticed that using index.js is pretty common pattern
   //If someone has been confused about that maybe this helps
-  expect(IndexImport.variable1).toBe(/* ENTER YOUR GUESS HERE */)
-  expect(IndexImport.variable2).toBe(/* ENTER YOUR GUESS HERE */)
-  expect(IndexImport.variable3).toBe(/* ENTER YOUR GUESS HERE */)
-  expect(IndexImport.variable4).toBe(/* ENTER YOUR GUESS HERE */)
+  expect(IndexImport.variable1).toBe('Bob')
+  expect(IndexImport.variable2).toBe('Kent')
+  expect(IndexImport.variable3).toBe(222)
+  expect(IndexImport.variable4).toBe(false)
 })
