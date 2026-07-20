@@ -1,3 +1,5 @@
+import {jest} from '@jest/globals'
+
 test('17_public-class-fields-1: public class fields help us avoid .bind-ing everything', () => {
   class FakeReactComponent {
     constructor(props) {
@@ -7,13 +9,8 @@ test('17_public-class-fields-1: public class fields help us avoid .bind-ing ever
   }
 
   class MyComponent extends FakeReactComponent {
-    constructor(...args) {
-      super(...args)
-      // no volem haver de fer això...
-      this.handleClick = this.handleClick.bind(this) // trist :-(
-    }
-    // Converteix `handleClick` en un camp públic de classe utilitzant una funció fletxa (`=>`) perquè mantingui automàticament el valor correcte de `this` sense necessitat de fer `.bind(this)` al constructor.
-    handleClick({target: {value}}) {
+    // camp públic de classe amb funció fletxa: `this` queda lligat automàticament
+    handleClick = ({target: {value}}) => {
       this.props.onClick(value)
     }
     render() {
